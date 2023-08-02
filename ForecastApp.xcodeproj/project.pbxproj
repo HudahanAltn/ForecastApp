@@ -16,6 +16,7 @@
 		05C9A16A2A7ADAAC0008B1BA /* ForecastAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05C9A1692A7ADAAC0008B1BA /* ForecastAppTests.swift */; };
 		05C9A1742A7ADAAC0008B1BA /* ForecastAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05C9A1732A7ADAAC0008B1BA /* ForecastAppUITests.swift */; };
 		05C9A1762A7ADAAC0008B1BA /* ForecastAppUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05C9A1752A7ADAAC0008B1BA /* ForecastAppUITestsLaunchTests.swift */; };
+		05C9A1832A7AE2B80008B1BA /* WeatherTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05C9A1822A7AE2B80008B1BA /* WeatherTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +50,7 @@
 		05C9A16F2A7ADAAC0008B1BA /* ForecastAppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ForecastAppUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		05C9A1732A7ADAAC0008B1BA /* ForecastAppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForecastAppUITests.swift; sourceTree = "<group>"; };
 		05C9A1752A7ADAAC0008B1BA /* ForecastAppUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForecastAppUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		05C9A1822A7AE2B80008B1BA /* WeatherTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -106,6 +108,7 @@
 				05C9A15B2A7ADAAC0008B1BA /* Assets.xcassets */,
 				05C9A15D2A7ADAAC0008B1BA /* LaunchScreen.storyboard */,
 				05C9A1602A7ADAAC0008B1BA /* Info.plist */,
+				05C9A1822A7AE2B80008B1BA /* WeatherTableViewCell.swift */,
 			);
 			path = ForecastApp;
 			sourceTree = "<group>";
@@ -258,6 +261,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				05C9A1832A7AE2B80008B1BA /* WeatherTableViewCell.swift in Sources */,
 				05C9A1572A7ADAAB0008B1BA /* ViewController.swift in Sources */,
 				05C9A1532A7ADAAB0008B1BA /* AppDelegate.swift in Sources */,
 				05C9A1552A7ADAAB0008B1BA /* SceneDelegate.swift in Sources */,

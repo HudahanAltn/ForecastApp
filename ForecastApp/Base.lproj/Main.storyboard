@@ -52,7 +52,7 @@
                                 <rect key="frame" x="0.0" y="363" width="393" height="455"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="weatherCell" rowHeight="75" id="hES-70-DPQ">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="weatherCell" rowHeight="75" id="hES-70-DPQ" customClass="WeatherTableViewCell" customModule="ForecastApp" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="50" width="393" height="75"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="hES-70-DPQ" id="B6q-L9-Mom">
@@ -94,8 +94,41 @@
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="_____" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IqJ-hv-8QS">
+                                                    <rect key="frame" x="263" y="36" width="45" height="21"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="45" id="6ZO-Ve-lXu"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="°" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jmJ-zA-P9A">
+                                                    <rect key="frame" x="365" y="17" width="8" height="21"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="°" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5Lu-qu-I12">
+                                                    <rect key="frame" x="300" y="17" width="8" height="21"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="_____" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9aq-q2-bee">
+                                                    <rect key="frame" x="328" y="36" width="45" height="21"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="45" id="ppc-nX-ucs"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
                                             </subviews>
                                             <constraints>
+                                                <constraint firstItem="9aq-q2-bee" firstAttribute="trailing" secondItem="B6q-L9-Mom" secondAttribute="trailingMargin" id="0Iq-tW-HyR"/>
                                                 <constraint firstItem="MTz-3X-7Kx" firstAttribute="top" secondItem="B6q-L9-Mom" secondAttribute="topMargin" constant="14" id="3tB-rM-MAq"/>
                                                 <constraint firstItem="cgp-Ev-T4N" firstAttribute="leading" secondItem="BLU-O3-VPn" secondAttribute="trailing" constant="20" id="E4n-Me-jSh"/>
                                                 <constraint firstItem="MTz-3X-7Kx" firstAttribute="leading" secondItem="B6q-L9-Mom" secondAttribute="leadingMargin" id="Kd5-gI-F2y"/>
@@ -103,9 +136,20 @@
                                                 <constraint firstItem="tv4-F0-5aq" firstAttribute="top" secondItem="B6q-L9-Mom" secondAttribute="top" constant="5" id="bCC-uI-I6A"/>
                                                 <constraint firstItem="BLU-O3-VPn" firstAttribute="leading" secondItem="tv4-F0-5aq" secondAttribute="trailing" constant="35" id="cKb-ed-u6L"/>
                                                 <constraint firstItem="BLU-O3-VPn" firstAttribute="top" secondItem="B6q-L9-Mom" secondAttribute="topMargin" constant="14" id="l8q-WK-PxP"/>
+                                                <constraint firstItem="9aq-q2-bee" firstAttribute="top" secondItem="B6q-L9-Mom" secondAttribute="topMargin" constant="25" id="rzS-oO-5dm"/>
+                                                <constraint firstItem="IqJ-hv-8QS" firstAttribute="top" secondItem="B6q-L9-Mom" secondAttribute="topMargin" constant="25" id="s85-6B-zv8"/>
+                                                <constraint firstItem="cgp-Ev-T4N" firstAttribute="leading" secondItem="IqJ-hv-8QS" secondAttribute="trailing" constant="20" id="wq8-XR-NQK"/>
                                                 <constraint firstAttribute="trailingMargin" secondItem="cgp-Ev-T4N" secondAttribute="trailing" id="yDT-Xs-hLb"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="dayLabel" destination="MTz-3X-7Kx" id="6hg-iA-nkV"/>
+                                            <outlet property="maxTempUnderline" destination="9aq-q2-bee" id="1LF-De-hrZ"/>
+                                            <outlet property="maxTemperature" destination="cgp-Ev-T4N" id="5z3-MB-B1f"/>
+                                            <outlet property="minTempUnderline" destination="IqJ-hv-8QS" id="xZC-Cn-YYf"/>
+                                            <outlet property="minTemperature" destination="BLU-O3-VPn" id="fCo-1U-au1"/>
+                                            <outlet property="weatherConditionImageView" destination="tv4-F0-5aq" id="SB6-3S-mAJ"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
