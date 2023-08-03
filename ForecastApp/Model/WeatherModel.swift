@@ -15,7 +15,7 @@ class WeatherModel{
     var temperature:Double //sıcaklık
     var temperatureString:String{//sıcaklıkğı stringe çevirdik
         
-        return String(format: "%f", temperature)
+        return String(format:"%.1f", temperature)
     }
     
     var conditionName:String{//computed property ile ıd2ye göre resim çekmek için kullanacağız.
@@ -70,7 +70,7 @@ class WeatherModel{
     init(){
         
         self.conditionID = 0
-        self.cityname = "unknown"
+        self.cityname = ""
         self.temperature = 0.0
     }
    

@@ -248,10 +248,10 @@
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="20.4" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gca-ce-Jk2">
-                                                    <rect key="frame" x="328" y="25" width="45" height="24"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="20.4" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gca-ce-Jk2">
+                                                    <rect key="frame" x="313" y="25" width="60" height="24"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="width" constant="45" id="vKV-Gh-5C5"/>
+                                                        <constraint firstAttribute="width" constant="60" id="vKV-Gh-5C5"/>
                                                     </constraints>
                                                     <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="20"/>
                                                     <nil key="textColor"/>
@@ -265,7 +265,7 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="_____" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KmZ-Se-IoR">
-                                                    <rect key="frame" x="328" y="36" width="45" height="21"/>
+                                                    <rect key="frame" x="321" y="36" width="45" height="21"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="45" id="MaR-OB-J3h"/>
                                                     </constraints>
@@ -284,12 +284,12 @@
                                             </subviews>
                                             <constraints>
                                                 <constraint firstItem="c59-ew-FXi" firstAttribute="centerX" secondItem="N8X-s8-o86" secondAttribute="centerX" id="1Ri-Pm-GXT"/>
+                                                <constraint firstItem="c59-ew-FXi" firstAttribute="top" secondItem="N8X-s8-o86" secondAttribute="top" constant="5" id="5Hb-Hz-vnQ"/>
                                                 <constraint firstItem="gca-ce-Jk2" firstAttribute="top" secondItem="N8X-s8-o86" secondAttribute="topMargin" constant="14" id="9Q8-7A-sk5"/>
-                                                <constraint firstItem="KmZ-Se-IoR" firstAttribute="trailing" secondItem="N8X-s8-o86" secondAttribute="trailingMargin" id="HA4-Yz-MQK"/>
+                                                <constraint firstItem="KmZ-Se-IoR" firstAttribute="trailing" secondItem="N8X-s8-o86" secondAttribute="trailingMargin" constant="-7" id="HA4-Yz-MQK"/>
                                                 <constraint firstItem="tbW-2n-Nln" firstAttribute="top" secondItem="N8X-s8-o86" secondAttribute="topMargin" constant="14" id="L1y-pG-uXc"/>
                                                 <constraint firstAttribute="trailingMargin" secondItem="gca-ce-Jk2" secondAttribute="trailing" id="O76-QF-YoS"/>
                                                 <constraint firstItem="tbW-2n-Nln" firstAttribute="leading" secondItem="N8X-s8-o86" secondAttribute="leadingMargin" id="mEQ-Xk-ztc"/>
-                                                <constraint firstItem="c59-ew-FXi" firstAttribute="centerY" secondItem="N8X-s8-o86" secondAttribute="centerY" id="mJM-pL-arz"/>
                                                 <constraint firstItem="KmZ-Se-IoR" firstAttribute="top" secondItem="N8X-s8-o86" secondAttribute="topMargin" constant="25" id="zbw-vg-4WQ"/>
                                             </constraints>
                                         </tableViewCellContentView>

@@ -15,6 +15,7 @@ class ViewModelVC{
     
     var receivedSevenDaysWeather:Observable<WeatherDataSeven> = Observable()
     
+    
     func loadDataWithLocation(latitude:CLLocationDegrees,longitude:CLLocationDegrees){
        
         WeatherManager().fetchWeatherConditionatUserLocation(latitude: latitude, longitude: longitude){
@@ -35,6 +36,16 @@ class ViewModelVC{
             self.receivedSevenDaysWeather.value = weather
         }
         
+    }
+    
+    func loadDataWithCityName(cityName:String){
+       
+        WeatherManager().fetchWeatherConditionatCityName(cityName: cityName){
+            
+            weather in
+            
+            self.receivedWeather.value = weather
+        }
     }
     
     

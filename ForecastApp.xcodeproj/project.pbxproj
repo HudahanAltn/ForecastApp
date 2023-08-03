@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		055571792A7B854F00A014B8 /* ColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 055571782A7B854F00A014B8 /* ColorExtension.swift */; };
 		05C9A1532A7ADAAB0008B1BA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05C9A1522A7ADAAB0008B1BA /* AppDelegate.swift */; };
 		05C9A1552A7ADAAB0008B1BA /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05C9A1542A7ADAAB0008B1BA /* SceneDelegate.swift */; };
 		05C9A1572A7ADAAB0008B1BA /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05C9A1562A7ADAAB0008B1BA /* ViewController.swift */; };
@@ -47,6 +48,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		055571782A7B854F00A014B8 /* ColorExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorExtension.swift; sourceTree = "<group>"; };
 		05C9A14F2A7ADAAB0008B1BA /* ForecastApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ForecastApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		05C9A1522A7ADAAB0008B1BA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		05C9A1542A7ADAAB0008B1BA /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -158,6 +160,7 @@
 			children = (
 				05C9A1852A7AE4F70008B1BA /* api.swift */,
 				05C9A1972A7AE7D10008B1BA /* Observable.swift */,
+				055571782A7B854F00A014B8 /* ColorExtension.swift */,
 			);
 			path = Utility;
 			sourceTree = "<group>";
@@ -340,6 +343,7 @@
 				05C9A1962A7AE7A60008B1BA /* WeatherDataSeven.swift in Sources */,
 				05C9A1832A7AE2B80008B1BA /* WeatherTableViewCell.swift in Sources */,
 				05C9A19C2A7AF09C0008B1BA /* CityTableViewCell.swift in Sources */,
+				055571792A7B854F00A014B8 /* ColorExtension.swift in Sources */,
 				05C9A1572A7ADAAB0008B1BA /* ViewController.swift in Sources */,
 				05C9A1532A7ADAAB0008B1BA /* AppDelegate.swift in Sources */,
 				05C9A1912A7AE7790008B1BA /* ViewModelVC.swift in Sources */,

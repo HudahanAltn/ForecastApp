@@ -15,6 +15,22 @@ struct WeatherManager{
     
     var weatherURL = Api.weatherURL //apı url
 
+    func fetchWeatherConditionatCityName(cityName:String,completion:@escaping(WeatherModel?)->Void){
+        
+        let urlString = "\(weatherURL)&q=\(cityName)" //api adresini düzenliyoruz ve arayacağımız sehir adını giriyoruz.
+        
+        performRequest(urlString: urlString){
+            
+            weather in
+            
+            
+             if let weather = weather {
+                completion(weather)
+             } else {
+                 completion( nil)
+             }
+        }
+    }
 
     func fetchWeatherConditionatUserLocation(latitude:CLLocationDegrees,longitude:CLLocationDegrees,completion: @escaping (WeatherModel?)->Void){//kullanıcının konumuna göre bize o şehrin o günkü hava durumu bilgisini veren fonksiyon
        
@@ -29,6 +45,8 @@ struct WeatherManager{
             }
         }
    }
+    
+    
     
     func performRequest(urlString: String, completion: @escaping (WeatherModel?) -> Void) {
         //apı ile
