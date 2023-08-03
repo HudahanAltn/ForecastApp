@@ -86,6 +86,8 @@ struct WeatherManager{
             let weatherModel = WeatherModel(coditionID: conditionID, cityname: name, temperature: temperature,latitude: lat,longitude: long)
             
             print("şehir:\(weatherModel.cityname)")
+            print("şehir lat:\(weatherModel.latitude)")
+            print("şehir long:\(weatherModel.longitude)")
             print("hava şuan:\(weatherModel.conditionName)")
             print("hava sıcaklık:\(weatherModel.temperature)")
             print("json parse basarılı")

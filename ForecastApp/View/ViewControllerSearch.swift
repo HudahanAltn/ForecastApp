@@ -35,9 +35,9 @@ class ViewControllerSearch: UIViewController {
             
             if segue.identifier == "toSevenDays"{
                 
-                let sevenDaysVC = segue.destination as! SevenDayWeatherConditionViewController
+                let sevenDaysVC = segue.destination as! searchedCityViewController
                 
-                sevenDaysVC.searchedWeather = weather
+                sevenDaysVC.searchedCityWeather = weather
             }
             
         }

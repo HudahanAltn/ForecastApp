@@ -8,7 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		055571792A7B854F00A014B8 /* ColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 055571782A7B854F00A014B8 /* ColorExtension.swift */; };
-		0555717B2A7B8BB500A014B8 /* SevenDayWeatherConditionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0555717A2A7B8BB500A014B8 /* SevenDayWeatherConditionViewController.swift */; };
+		0555717B2A7B8BB500A014B8 /* searchedCityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0555717A2A7B8BB500A014B8 /* searchedCityViewController.swift */; };
+		0555717D2A7B98D500A014B8 /* SearchedCityTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0555717C2A7B98D500A014B8 /* SearchedCityTableViewCell.swift */; };
 		05C9A1532A7ADAAB0008B1BA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05C9A1522A7ADAAB0008B1BA /* AppDelegate.swift */; };
 		05C9A1552A7ADAAB0008B1BA /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05C9A1542A7ADAAB0008B1BA /* SceneDelegate.swift */; };
 		05C9A1572A7ADAAB0008B1BA /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05C9A1562A7ADAAB0008B1BA /* ViewController.swift */; };
@@ -50,7 +51,8 @@
 
 /* Begin PBXFileReference section */
 		055571782A7B854F00A014B8 /* ColorExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorExtension.swift; sourceTree = "<group>"; };
-		0555717A2A7B8BB500A014B8 /* SevenDayWeatherConditionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SevenDayWeatherConditionViewController.swift; sourceTree = "<group>"; };
+		0555717A2A7B8BB500A014B8 /* searchedCityViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = searchedCityViewController.swift; sourceTree = "<group>"; };
+		0555717C2A7B98D500A014B8 /* SearchedCityTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchedCityTableViewCell.swift; sourceTree = "<group>"; };
 		05C9A14F2A7ADAAB0008B1BA /* ForecastApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ForecastApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		05C9A1522A7ADAAB0008B1BA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		05C9A1542A7ADAAB0008B1BA /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -192,7 +194,8 @@
 				05C9A1562A7ADAAB0008B1BA /* ViewController.swift */,
 				05C9A1992A7AEFDE0008B1BA /* ViewControllerSearch.swift */,
 				05C9A19B2A7AF09C0008B1BA /* CityTableViewCell.swift */,
-				0555717A2A7B8BB500A014B8 /* SevenDayWeatherConditionViewController.swift */,
+				0555717A2A7B8BB500A014B8 /* searchedCityViewController.swift */,
+				0555717C2A7B98D500A014B8 /* SearchedCityTableViewCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -341,6 +344,7 @@
 				05C9A1862A7AE4F70008B1BA /* api.swift in Sources */,
 				05C9A1942A7AE79F0008B1BA /* WeatherManagerSeven.swift in Sources */,
 				05C9A19A2A7AEFDE0008B1BA /* ViewControllerSearch.swift in Sources */,
+				0555717D2A7B98D500A014B8 /* SearchedCityTableViewCell.swift in Sources */,
 				05C9A18D2A7AE6EF0008B1BA /* WeatherData.swift in Sources */,
 				05C9A1982A7AE7D10008B1BA /* Observable.swift in Sources */,
 				05C9A1962A7AE7A60008B1BA /* WeatherDataSeven.swift in Sources */,
@@ -349,7 +353,7 @@
 				055571792A7B854F00A014B8 /* ColorExtension.swift in Sources */,
 				05C9A1572A7ADAAB0008B1BA /* ViewController.swift in Sources */,
 				05C9A1532A7ADAAB0008B1BA /* AppDelegate.swift in Sources */,
-				0555717B2A7B8BB500A014B8 /* SevenDayWeatherConditionViewController.swift in Sources */,
+				0555717B2A7B8BB500A014B8 /* searchedCityViewController.swift in Sources */,
 				05C9A1912A7AE7790008B1BA /* ViewModelVC.swift in Sources */,
 				05C9A18F2A7AE6F50008B1BA /* WeatherModel.swift in Sources */,
 				05C9A1552A7ADAAB0008B1BA /* SceneDelegate.swift in Sources */,
