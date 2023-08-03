@@ -28,6 +28,20 @@ class ViewControllerSearch: UIViewController {
         
         
     }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
+        if let weather = sender as? WeatherModel{
+            
+            if segue.identifier == "toSevenDays"{
+                
+                let sevenDaysVC = segue.destination as! SevenDayWeatherConditionViewController
+                
+                sevenDaysVC.searchedWeather = weather
+            }
+            
+        }
+    }
 
 }
 
@@ -133,6 +147,11 @@ extension ViewControllerSearch:UITableViewDelegate,UITableViewDataSource{
         let rowHeight:CGFloat = tableView.frame.size.height/7.5
         
         return rowHeight
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        performSegue(withIdentifier: "toSevenDays", sender: searchedWeather)
     }
     
 }

@@ -223,7 +223,8 @@ extension ViewController{
                     self?.cityLabel.text = cityString
                 }
                 self?.weatherConditionImageView.image = UIImage(systemName: value!.conditionName)
-                self?.temperatureLabel.text = String((value?.temperatureString.prefix(2))!)
+//                self?.temperatureLabel.text = String((value?.temperatureString.prefix(2))!)
+                self?.temperatureLabel.text = value?.temperatureString
                 
                 value?.getIcon(iconCode: value!.conditionName){ data in
                     DispatchQueue.main.async {

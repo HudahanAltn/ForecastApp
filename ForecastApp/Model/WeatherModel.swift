@@ -13,6 +13,9 @@ class WeatherModel{
     var conditionID:Int // bu ID ye göre ekranda havadurumuna ait resim çıkacak
     var cityname:String// sehir ismi
     var temperature:Double //sıcaklık
+    var latitude:Double
+    var longitude:Double
+    
     var temperatureString:String{//sıcaklıkğı stringe çevirdik
         
         return String(format:"%.1f", temperature)
@@ -60,11 +63,13 @@ class WeatherModel{
         
     }
     
-    init(coditionID:Int,cityname:String,temperature:Double){
+    init(coditionID:Int,cityname:String,temperature:Double,latitude:Double,longitude:Double){
         
         self.conditionID = coditionID
         self.cityname = cityname
         self.temperature = temperature
+        self.latitude = latitude
+        self.longitude = longitude
     }
     
     init(){
@@ -72,6 +77,8 @@ class WeatherModel{
         self.conditionID = 0
         self.cityname = ""
         self.temperature = 0.0
+        self.latitude = 0.0
+        self.longitude = 0.0
     }
    
     func getIcon(iconCode:String,completion:@escaping(Data?)->Void){// openweather icon çekmek için oluşturulan fonksiyon.iconise "conditionName" değerleri ile çekilecek.

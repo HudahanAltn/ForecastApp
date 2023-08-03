@@ -12,6 +12,7 @@ import Foundation
 
 struct WeatherData:Codable{ // ANA SINIF
     
+    var coord:Coordinates
     var name:String
     var main:Main
     var weather:[Weather]
@@ -30,6 +31,11 @@ struct Weather:Codable{
     var id:Int
 }
 
+struct Coordinates:Codable{
+    
+    var lon:Double
+    var lat:Double
+}
 
 //
 //{

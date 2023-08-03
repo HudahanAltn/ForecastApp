@@ -80,9 +80,10 @@ struct WeatherManager{
             let name  = decodedData.name
             let temperature = decodedData.main.temp
             let conditionID = decodedData.weather[0].id
-            
+            let lat = decodedData.coord.lat
+            let long = decodedData.coord.lon
             // verilerle yeni bir nesne oluşturduk.bu nesne ile arayüzümüzü şekillendireceğiz
-            let weatherModel = WeatherModel(coditionID: conditionID, cityname: name, temperature: temperature)
+            let weatherModel = WeatherModel(coditionID: conditionID, cityname: name, temperature: temperature,latitude: lat,longitude: long)
             
             print("şehir:\(weatherModel.cityname)")
             print("hava şuan:\(weatherModel.conditionName)")

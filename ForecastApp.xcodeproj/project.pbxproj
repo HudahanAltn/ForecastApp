@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		055571792A7B854F00A014B8 /* ColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 055571782A7B854F00A014B8 /* ColorExtension.swift */; };
+		0555717B2A7B8BB500A014B8 /* SevenDayWeatherConditionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0555717A2A7B8BB500A014B8 /* SevenDayWeatherConditionViewController.swift */; };
 		05C9A1532A7ADAAB0008B1BA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05C9A1522A7ADAAB0008B1BA /* AppDelegate.swift */; };
 		05C9A1552A7ADAAB0008B1BA /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05C9A1542A7ADAAB0008B1BA /* SceneDelegate.swift */; };
 		05C9A1572A7ADAAB0008B1BA /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05C9A1562A7ADAAB0008B1BA /* ViewController.swift */; };
@@ -49,6 +50,7 @@
 
 /* Begin PBXFileReference section */
 		055571782A7B854F00A014B8 /* ColorExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorExtension.swift; sourceTree = "<group>"; };
+		0555717A2A7B8BB500A014B8 /* SevenDayWeatherConditionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SevenDayWeatherConditionViewController.swift; sourceTree = "<group>"; };
 		05C9A14F2A7ADAAB0008B1BA /* ForecastApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ForecastApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		05C9A1522A7ADAAB0008B1BA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		05C9A1542A7ADAAB0008B1BA /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -190,6 +192,7 @@
 				05C9A1562A7ADAAB0008B1BA /* ViewController.swift */,
 				05C9A1992A7AEFDE0008B1BA /* ViewControllerSearch.swift */,
 				05C9A19B2A7AF09C0008B1BA /* CityTableViewCell.swift */,
+				0555717A2A7B8BB500A014B8 /* SevenDayWeatherConditionViewController.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -346,6 +349,7 @@
 				055571792A7B854F00A014B8 /* ColorExtension.swift in Sources */,
 				05C9A1572A7ADAAB0008B1BA /* ViewController.swift in Sources */,
 				05C9A1532A7ADAAB0008B1BA /* AppDelegate.swift in Sources */,
+				0555717B2A7B8BB500A014B8 /* SevenDayWeatherConditionViewController.swift in Sources */,
 				05C9A1912A7AE7790008B1BA /* ViewModelVC.swift in Sources */,
 				05C9A18F2A7AE6F50008B1BA /* WeatherModel.swift in Sources */,
 				05C9A1552A7ADAAB0008B1BA /* SceneDelegate.swift in Sources */,
