@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="MEG-kv-0PS">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="mxY-GK-68D">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21679"/>
@@ -9,6 +9,49 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
+        <!--View Controller Bind-->
+        <scene sceneID="4Ii-Gj-e1S">
+            <objects>
+                <viewController storyboardIdentifier="noVC" id="9Iv-aK-bBE" customClass="ViewControllerBind" customModule="ForecastApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="RCg-fk-lEA">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon" translatesAutoresizingMaskIntoConstraints="NO" id="i3B-q2-BSA">
+                                <rect key="frame" x="121.66666666666669" y="293" width="150" height="150"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="150" id="MCi-Nl-mFK"/>
+                                    <constraint firstAttribute="width" constant="150" id="bq6-ZA-WF1"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ForecastApp" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pNE-YQ-W6p">
+                                <rect key="frame" x="104" y="483" width="185" height="36"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="185" id="ThU-Je-WN5"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="30"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="dPT-Eh-84R"/>
+                        <color key="backgroundColor" red="0.75686274509803919" green="0.91764705882352937" blue="0.94901960784313721" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <constraints>
+                            <constraint firstItem="i3B-q2-BSA" firstAttribute="centerX" secondItem="RCg-fk-lEA" secondAttribute="centerX" id="NnG-1g-Q3Q"/>
+                            <constraint firstItem="i3B-q2-BSA" firstAttribute="top" secondItem="dPT-Eh-84R" secondAttribute="top" constant="190" id="a1Z-Rq-N0e"/>
+                            <constraint firstItem="pNE-YQ-W6p" firstAttribute="top" secondItem="i3B-q2-BSA" secondAttribute="bottom" constant="40" id="cCN-eg-de4"/>
+                            <constraint firstItem="pNE-YQ-W6p" firstAttribute="centerX" secondItem="RCg-fk-lEA" secondAttribute="centerX" id="eLW-go-N05"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="UyA-iN-I7J"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="show" identifier="toMainVC" id="fd9-8y-7Or"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="pee-y4-hnP" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1115.2671755725191" y="31.690140845070424"/>
+        </scene>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
@@ -219,7 +262,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1046.5648854961833" y="31.690140845070424"/>
+            <point key="canvasLocation" x="1973.2824427480916" y="31.690140845070424"/>
         </scene>
         <!--Map-->
         <scene sceneID="9Ml-zA-mcp">
@@ -246,7 +289,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dFS-nl-TKH" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2004" y="511"/>
+            <point key="canvasLocation" x="2930.5343511450383" y="510.56338028169017"/>
         </scene>
         <!--search-->
         <scene sceneID="Qjy-WS-vih">
@@ -359,7 +402,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="sUx-7U-R3L" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2004" y="-397"/>
+            <point key="canvasLocation" x="2930.5343511450383" y="-397.18309859154931"/>
         </scene>
         <!--View Controller Searched City-->
         <scene sceneID="c2N-WO-Em4">
@@ -556,31 +599,32 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="QLg-l0-wb5" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2932" y="32"/>
+            <point key="canvasLocation" x="3857.2519083969464" y="31.690140845070424"/>
         </scene>
         <!--Navigation Controller-->
-        <scene sceneID="2Qg-fo-jUy">
+        <scene sceneID="uGf-0C-sqy">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="MEG-kv-0PS" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="mxY-GK-68D" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="ls4-vT-tjB">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="EYk-3e-w5d">
                         <rect key="frame" x="0.0" y="59" width="393" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="Zjl-XC-igH"/>
+                        <segue destination="9Iv-aK-bBE" kind="relationship" relationship="rootViewController" id="ZXA-X5-1Sw"/>
                     </connections>
                 </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="c4t-IL-JEs" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="GMf-Ff-Qli" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="119.84732824427481" y="31.690140845070424"/>
+            <point key="canvasLocation" x="188.54961832061068" y="31.690140845070424"/>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
         <segue reference="0Gs-ZF-qVv"/>
     </inferredMetricsTieBreakers>
     <resources>
+        <image name="icon" width="512" height="512"/>
         <image name="magnifyingglass" catalog="system" width="128" height="117"/>
         <image name="map" catalog="system" width="128" height="112"/>
         <image name="sun.max" catalog="system" width="128" height="125"/>

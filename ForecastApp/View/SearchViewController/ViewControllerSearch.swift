@@ -17,19 +17,17 @@ class ViewControllerSearch: UIViewController {
     
     private var searchedWeather:WeatherModel?
     
-    private var aramaYapılıyorMu:Bool = false
+    private var isSearching:Bool = false
     
-    private var aramayapıldı:Bool = false
-    
+   
     override func viewDidLoad() {
         super.viewDidLoad()
-
         setTableViewFeatures()
         setSearchBarFeatures()
         
+
     }
-  
-    
+      
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         
         if let weather = sender as? WeatherModel{
@@ -79,7 +77,7 @@ extension ViewControllerSearch:UITableViewDelegate,UITableViewDataSource{
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
-        if aramaYapılıyorMu{
+        if isSearching{
             return 1
             
         }else{
@@ -92,7 +90,7 @@ extension ViewControllerSearch:UITableViewDelegate,UITableViewDataSource{
         
         
         
-        if aramaYapılıyorMu{
+        if isSearching{
             
             let cell = tableView.dequeueReusableCell(withIdentifier: "cityCell",for:indexPath) as! CityTableViewCell
           
@@ -165,7 +163,7 @@ extension ViewControllerSearch:UISearchBarDelegate{
         
         if citySearchBar.text == ""{ // searchBar 'a yazdıklarımızı silince
             
-            aramaYapılıyorMu = false// arama artık yapılmıyordur
+            isSearching = false// arama artık yapılmıyordur
             
             cityTableView.alpha = 0
             
@@ -174,7 +172,7 @@ extension ViewControllerSearch:UISearchBarDelegate{
         }
         else{//arama yapılıyor
             
-            aramaYapılıyorMu = true
+            isSearching = true
             cityTableView.alpha = 1
             
             if let cityName = searchBar.text{
