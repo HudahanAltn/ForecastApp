@@ -13,12 +13,13 @@ class ViewControllerSearch: UIViewController {
     
     @IBOutlet weak var cityTableView: UITableView!
     
-    var viewModelSearch = ViewModelVC()
+    private var viewModelSearch = ViewModelVC()
     
-    var searchedWeather:WeatherModel?
+    private var searchedWeather:WeatherModel?
     
-    var aramaYapılıyorMu:Bool = false
-    var aramayapıldı:Bool = false
+    private var aramaYapılıyorMu:Bool = false
+    
+    private var aramayapıldı:Bool = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -26,14 +27,14 @@ class ViewControllerSearch: UIViewController {
         setTableViewFeatures()
         setSearchBarFeatures()
         
-        
     }
+  
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         
         if let weather = sender as? WeatherModel{
             
-            if segue.identifier == "toSevenDays"{
+            if segue.identifier == "searchtoSevenDays"{
                 
                 let sevenDaysVC = segue.destination as! searchedCityViewController
                 
@@ -80,6 +81,7 @@ extension ViewControllerSearch:UITableViewDelegate,UITableViewDataSource{
         
         if aramaYapılıyorMu{
             return 1
+            
         }else{
             return 0
         }
@@ -88,11 +90,12 @@ extension ViewControllerSearch:UITableViewDelegate,UITableViewDataSource{
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        let cell = tableView.dequeueReusableCell(withIdentifier: "cityCell",for:indexPath) as! CityTableViewCell
+        
         
         if aramaYapılıyorMu{
             
-            
+            let cell = tableView.dequeueReusableCell(withIdentifier: "cityCell",for:indexPath) as! CityTableViewCell
+          
             let cityString = searchedWeather?.cityname
             if let range = cityString!.range(of: " "){
                 let substring = cityString![..<range.lowerBound]
@@ -115,12 +118,13 @@ extension ViewControllerSearch:UITableViewDelegate,UITableViewDataSource{
             return cell
             
         }else{
-            
+            let cell = tableView.dequeueReusableCell(withIdentifier: "cityCell",for:indexPath) as! CityTableViewCell
             let noWeather:WeatherModel = WeatherModel()
             cell.cityLabel.text = noWeather.cityname
             cell.weatherConditionImageView.image = nil
             cell.temperatureLabel.text = ""
             
+       
             return cell
         }
       
@@ -151,7 +155,7 @@ extension ViewControllerSearch:UITableViewDelegate,UITableViewDataSource{
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
-        performSegue(withIdentifier: "toSevenDays", sender: searchedWeather)
+        performSegue(withIdentifier: "searchtoSevenDays", sender: searchedWeather)
     }
     
 }
@@ -162,8 +166,11 @@ extension ViewControllerSearch:UISearchBarDelegate{
         if citySearchBar.text == ""{ // searchBar 'a yazdıklarımızı silince
             
             aramaYapılıyorMu = false// arama artık yapılmıyordur
+            
             cityTableView.alpha = 0
+            
             self.cityTableView.reloadData()
+            
         }
         else{//arama yapılıyor
             
@@ -171,8 +178,7 @@ extension ViewControllerSearch:UISearchBarDelegate{
             cityTableView.alpha = 1
             
             if let cityName = searchBar.text{
-                
-                
+     
                 viewModelSearch.loadDataWithCityName(cityName: cityName)
                 viewModelSearch.receivedWeather.bind{
                     
@@ -193,3 +199,5 @@ extension ViewControllerSearch:UISearchBarDelegate{
         view.endEditing(true)
     }
 }
+
+

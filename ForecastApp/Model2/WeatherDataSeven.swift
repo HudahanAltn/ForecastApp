@@ -9,10 +9,9 @@ import Foundation
 
 
 struct WeatherDataSeven:Codable{
-    
+
     var daily:[Daily]
-    
-    
+
 }
 
 struct Daily:Codable{
@@ -28,6 +27,7 @@ struct Temp:Codable{
     
     var min:Double
     var max:Double
+    
 }
 
 struct WeatherSeven:Codable{

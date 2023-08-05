@@ -2,7 +2,7 @@
 //  ViewController.swift
 //  ForecastApp
 //
-//  Created by Hüdahan Altun on 2.08.2023.
+//  Created by Hüdahan Altun
 //
 
 import UIKit
@@ -27,7 +27,6 @@ class ViewController: UIViewController {
    
     private var sevenDaysWeatherCondition:[Daily] = [Daily]()
     
-    private var dayNames = ["Pazartesi","Salı","Çarşamba","Perşembe","Cuma","Cumartesi","Pazar"]
     
     
     override func viewDidLoad() {

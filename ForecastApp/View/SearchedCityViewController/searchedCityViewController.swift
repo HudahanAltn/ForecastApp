@@ -23,8 +23,7 @@ class searchedCityViewController: UIViewController {
     @IBOutlet weak var weatherTableView: UITableView!
     
     private var searchedCityCondition:[Daily] = [Daily]()
-    
-    private var dayNames = ["Pazartesi","Salı","Çarşamba","Perşembe","Cuma","Cumartesi","Pazar"]
+
     
     var searchedCityWeather:WeatherModel?
     

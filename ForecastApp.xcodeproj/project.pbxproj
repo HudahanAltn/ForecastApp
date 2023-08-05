@@ -104,6 +104,33 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0554B3132A7BB8DE00BE1983 /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				05C9A1562A7ADAAB0008B1BA /* ViewController.swift */,
+				05C9A1822A7AE2B80008B1BA /* WeatherTableViewCell.swift */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
+		0554B3142A7BB8FB00BE1983 /* SearchViewController */ = {
+			isa = PBXGroup;
+			children = (
+				05C9A19B2A7AF09C0008B1BA /* CityTableViewCell.swift */,
+				05C9A1992A7AEFDE0008B1BA /* ViewControllerSearch.swift */,
+			);
+			path = SearchViewController;
+			sourceTree = "<group>";
+		};
+		0554B3152A7BB91600BE1983 /* SearchedCityViewController */ = {
+			isa = PBXGroup;
+			children = (
+				0555717A2A7B8BB500A014B8 /* searchedCityViewController.swift */,
+				0555717C2A7B98D500A014B8 /* SearchedCityTableViewCell.swift */,
+			);
+			path = SearchedCityViewController;
+			sourceTree = "<group>";
+		};
 		05C9A1462A7ADAAB0008B1BA = {
 			isa = PBXGroup;
 			children = (
@@ -127,8 +154,8 @@
 		05C9A1512A7ADAAB0008B1BA /* ForecastApp */ = {
 			isa = PBXGroup;
 			children = (
-				05C9A1922A7AE7930008B1BA /* Model2 */,
 				05C9A1892A7AE50D0008B1BA /* View */,
+				05C9A1922A7AE7930008B1BA /* Model2 */,
 				05C9A1882A7AE5040008B1BA /* ViewModel */,
 				05C9A1872A7AE4FF0008B1BA /* Model */,
 				05C9A1842A7AE4EB0008B1BA /* Utility */,
@@ -190,12 +217,9 @@
 		05C9A1892A7AE50D0008B1BA /* View */ = {
 			isa = PBXGroup;
 			children = (
-				05C9A1822A7AE2B80008B1BA /* WeatherTableViewCell.swift */,
-				05C9A1562A7ADAAB0008B1BA /* ViewController.swift */,
-				05C9A1992A7AEFDE0008B1BA /* ViewControllerSearch.swift */,
-				05C9A19B2A7AF09C0008B1BA /* CityTableViewCell.swift */,
-				0555717A2A7B8BB500A014B8 /* searchedCityViewController.swift */,
-				0555717C2A7B98D500A014B8 /* SearchedCityTableViewCell.swift */,
+				0554B3152A7BB91600BE1983 /* SearchedCityViewController */,
+				0554B3142A7BB8FB00BE1983 /* SearchViewController */,
+				0554B3132A7BB8DE00BE1983 /* ViewController */,
 			);
 			path = View;
 			sourceTree = "<group>";

@@ -319,12 +319,12 @@
                     <connections>
                         <outlet property="citySearchBar" destination="dsW-5Y-yMe" id="uMx-Sd-Cyt"/>
                         <outlet property="cityTableView" destination="lvJ-NU-e9C" id="fcS-of-JHc"/>
-                        <segue destination="nth-ru-E4S" kind="show" identifier="toSevenDays" id="kBD-dw-7TN"/>
+                        <segue destination="nth-ru-E4S" kind="show" identifier="searchtoSevenDays" id="kBD-dw-7TN"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="sUx-7U-R3L" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1895" y="32"/>
+            <point key="canvasLocation" x="1895" y="-527"/>
         </scene>
         <!--Searched City View Controller-->
         <scene sceneID="c2N-WO-Em4">

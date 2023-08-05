@@ -2,7 +2,7 @@
 //  WeatherManager.swift
 //  ForecastApp
 //
-//  Created by Hüdahan Altun on 2.08.2023.
+//  Created by Hüdahan Altun 
 //
 
 
@@ -23,7 +23,6 @@ struct WeatherManager{
             
             weather in
             
-            
              if let weather = weather {
                 completion(weather)
              } else {
@@ -32,7 +31,7 @@ struct WeatherManager{
         }
     }
 
-    func fetchWeatherConditionatUserLocation(latitude:CLLocationDegrees,longitude:CLLocationDegrees,completion: @escaping (WeatherModel?)->Void){//kullanıcının konumuna göre bize o şehrin o günkü hava durumu bilgisini veren fonksiyon
+    func  fetchWeatherConditionatUserLocation(latitude:CLLocationDegrees,longitude:CLLocationDegrees,completion: @escaping (WeatherModel?)->Void){//kullanıcının konumuna göre bize o şehrin o günkü hava durumu bilgisini veren fonksiyon
        
        let coordinates = "\(weatherURL)&lat=\(latitude)&lon=\(longitude)" //api adresini düzenliyoruz ve corelocaiton'dan gelen koordinat veirleri ni url' şeklinde alıyoruz
        
