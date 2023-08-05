@@ -8,7 +8,8 @@
 import UIKit
 import CoreLocation
 
-class searchedCityViewController: UIViewController {
+
+class ViewControllerSearchedCity: UIViewController {
 
     @IBOutlet weak var cityLAbel: UILabel!
     
@@ -26,20 +27,22 @@ class searchedCityViewController: UIViewController {
 
     
     var searchedCityWeather:WeatherModel?
-    
+
     var viewModelSearchedVC = ViewModelVC()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         loadCurrentWeather()
         setTableViewFeatures()
         showAnimation()
+        showTodayName()
     }
 
   
 
 }
-extension searchedCityViewController{
+extension ViewControllerSearchedCity{
     
     private func showAnimation(){
         
@@ -119,7 +122,7 @@ extension searchedCityViewController{
     }
 }
 
-extension searchedCityViewController{
+extension ViewControllerSearchedCity{
     
     private func showCellAnimation(cell:SearchedCityTableViewCell){
         
@@ -157,7 +160,7 @@ extension searchedCityViewController{
         cell.maxTemperature.text = String(format: "%.1f",searchedCityCondition[indexPath.row].temp.max)
     }
 }
-extension searchedCityViewController:UITableViewDelegate,UITableViewDataSource{
+extension ViewControllerSearchedCity:UITableViewDelegate,UITableViewDataSource{
     
     func numberOfSections(in tableView: UITableView) -> Int {
         
@@ -206,7 +209,7 @@ extension searchedCityViewController:UITableViewDelegate,UITableViewDataSource{
         }
 }
 
-extension searchedCityViewController{
+extension ViewControllerSearchedCity{
     
     private func getSevenDaysWeatherCondition(latitude: CLLocationDegrees, longitude: CLLocationDegrees){
         

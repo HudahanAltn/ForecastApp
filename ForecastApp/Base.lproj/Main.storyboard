@@ -3,6 +3,7 @@
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21679"/>
+        <capability name="Map view configurations" minToolsVersion="14.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -11,7 +12,7 @@
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="ForecastApp" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="MainVC" id="BYZ-38-t0r" customClass="ViewController" customModule="ForecastApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -194,11 +195,18 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="adl-37-NNH">
-                        <barButtonItem key="rightBarButtonItem" title="Item" image="magnifyingglass" catalog="system" id="gp0-HF-Mv4">
-                            <connections>
-                                <segue destination="YKJ-b8-wBM" kind="show" id="Bx8-xA-1z2"/>
-                            </connections>
-                        </barButtonItem>
+                        <rightBarButtonItems>
+                            <barButtonItem title="Item" image="magnifyingglass" catalog="system" id="gp0-HF-Mv4">
+                                <connections>
+                                    <segue destination="YKJ-b8-wBM" kind="show" id="Bx8-xA-1z2"/>
+                                </connections>
+                            </barButtonItem>
+                            <barButtonItem title="Item" image="map" catalog="system" id="ATi-KJ-qTf">
+                                <connections>
+                                    <segue destination="3wl-Jg-XsP" kind="show" id="GRB-Gr-L3R"/>
+                                </connections>
+                            </barButtonItem>
+                        </rightBarButtonItems>
                     </navigationItem>
                     <connections>
                         <outlet property="cityLabel" destination="Hgk-te-wN0" id="JFD-SM-zBp"/>
@@ -212,6 +220,33 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1046.5648854961833" y="31.690140845070424"/>
+        </scene>
+        <!--Map-->
+        <scene sceneID="9Ml-zA-mcp">
+            <objects>
+                <viewController id="3wl-Jg-XsP" customClass="ViewControllerMap" customModule="ForecastApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="P1N-gJ-Lbw">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="afu-ed-Qde">
+                                <rect key="frame" x="0.0" y="103" width="393" height="715"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <standardMapConfiguration key="preferredConfiguration"/>
+                            </mapView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="Oi5-by-Bxt"/>
+                        <color key="backgroundColor" red="0.36078431372549019" green="0.76078431372549016" blue="0.94901960784313721" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Map" id="SGp-V7-KFn"/>
+                    <connections>
+                        <outlet property="mapView" destination="afu-ed-Qde" id="xtD-rZ-mEA"/>
+                        <segue destination="nth-ru-E4S" kind="show" identifier="mapToSearchedCity" id="0Gs-ZF-qVv"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dFS-nl-TKH" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2004" y="511"/>
         </scene>
         <!--search-->
         <scene sceneID="Qjy-WS-vih">
@@ -324,12 +359,12 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="sUx-7U-R3L" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1895" y="-527"/>
+            <point key="canvasLocation" x="2004" y="-397"/>
         </scene>
-        <!--Searched City View Controller-->
+        <!--View Controller Searched City-->
         <scene sceneID="c2N-WO-Em4">
             <objects>
-                <viewController id="nth-ru-E4S" customClass="searchedCityViewController" customModule="ForecastApp" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="nth-ru-E4S" customClass="ViewControllerSearchedCity" customModule="ForecastApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="M5V-BJ-bxF">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -521,7 +556,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="QLg-l0-wb5" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2869.4656488549617" y="31.690140845070424"/>
+            <point key="canvasLocation" x="2932" y="32"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="2Qg-fo-jUy">
@@ -542,8 +577,12 @@
             <point key="canvasLocation" x="119.84732824427481" y="31.690140845070424"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="0Gs-ZF-qVv"/>
+    </inferredMetricsTieBreakers>
     <resources>
         <image name="magnifyingglass" catalog="system" width="128" height="117"/>
+        <image name="map" catalog="system" width="128" height="112"/>
         <image name="sun.max" catalog="system" width="128" height="125"/>
         <systemColor name="labelColor">
             <color red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

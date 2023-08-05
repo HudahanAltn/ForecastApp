@@ -28,13 +28,13 @@ class ViewController: UIViewController {
     private var sevenDaysWeatherCondition:[Daily] = [Daily]()
     
     
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         showTodayName()
         setLocationManager()
         setTableViewFeatures()
         showAnimation()
+
     }
 
 }
@@ -52,12 +52,12 @@ extension ViewController{
     }
     
     private func showTodayName(){
-        
+
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "EEEE"
         let today = Date()
         todayLabel.text = dateFormatter.string(from: today)
-        
+
     }
     
     private func setLocationManager(){
@@ -266,7 +266,7 @@ extension ViewController:CLLocationManagerDelegate{
     
     
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-        //coreLocation birkaç defa konum almaya çalışarak en doğru konum bilgisini elde etmeye çalışır.böylece bütün konumlaırn bulunduğu "locations" dizisi oluşturulur.dizinin en son elemanı en doğru konumu verir
+        //coreLocation birkaç defa konum almaya çalışarak en doğru konum bilgisini elde etmeye çalışır.böylece bütün konumların bulunduğu "locations" dizisi oluşturulur.dizinin en son elemanı en doğru konumu verir
         if let locationInf = locations.last {// konumu aldık
             
             locationManagerr.stopUpdatingLocation()
