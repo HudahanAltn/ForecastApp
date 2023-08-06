@@ -166,7 +166,7 @@ extension ViewControllerSearch:UISearchBarDelegate{
         }
         else{//arama yapılıyor
 
-            if citySearchBar.text!.count > 3 && citySearchBar.text!.count < 20{// kullanıcı geçerli kelime aralığında arama yapmalıdır.
+            if searchText.count > 3 && searchText.count < 20 && !searchText.trimmingCharacters(in: .whitespaces).isEmpty{// kullanıcı geçerli kelime aralığında arama yapmalıdır.
 
                 isSearching = true
                 cityTableView.alpha = 1
