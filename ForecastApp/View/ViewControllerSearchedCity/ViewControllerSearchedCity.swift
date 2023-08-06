@@ -34,46 +34,18 @@ class ViewControllerSearchedCity: UIViewController {
         super.viewDidLoad()
 
         loadCurrentWeather()
-        setTableViewFeatures()
-        showAnimation()
-        showTodayName()
+
+
+        UIFeatures().showTodayName(todayLabel: todayLabel)
+        UIFeatures().setTableViewFeatures(tableView: weatherTableView, viewController: self)
+        UIFeatures().showAnimation(temperatureUnderline: temperatureUnderline, weatherConditionImageView: weatherConditionImageView)
     }
 
   
 
 }
 extension ViewControllerSearchedCity{
-    
-    private func showAnimation(){
-        
-        UIView.animate(withDuration: 2 ,delay:0 ,options:[.repeat,.autoreverse],animations: {
-
-            self.temperatureUnderline.alpha = 0
-            
-            self.weatherConditionImageView.transform = CGAffineTransform(translationX: 8, y: 0)
-            
-            self.weatherConditionImageView.alpha = 1
-            
-            self.temperatureUnderline.alpha = 1
-            
-        }, completion: nil)
-        
-        
-    }
-    private func setTableViewFeatures(){
-        
-        weatherTableView.delegate = self
-        weatherTableView.dataSource = self
-        
-        weatherTableView.frame.size.height = UIScreen.main.bounds.height/2
-        weatherTableView.backgroundColor = UIColor(red: 1, green: 1, blue: 1, alpha: 0.5)
-        weatherTableView.separatorStyle = .singleLine
-        weatherTableView.separatorColor = .white
-        weatherTableView.backgroundView = nil
-        
-       
-    }
-    
+ 
     private func loadCurrentWeather(){
         
         if let weather = searchedCityWeather{
@@ -86,7 +58,6 @@ extension ViewControllerSearchedCity{
                 
                 self.cityLAbel.text = cityString
             }
-            showTodayName()
             weather.getIcon(iconCode: weather.conditionName){ [weak self]
                 data in
                 
@@ -101,65 +72,9 @@ extension ViewControllerSearchedCity{
         }
 
     }
-  
-    private func showTodayNameFromUnixDate(indexPath:IndexPath)->String{
-        
-        let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "EEEE"
-        let date = Date(timeIntervalSince1970: TimeInterval(searchedCityCondition[indexPath.row].dt))
-        let dayName = dateFormatter.string(from: date)
-        
-        return dayName
-    }
-    
-    private func showTodayName(){
-        
-        let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "EEEE"
-        let today = Date()
-        todayLabel.text = dateFormatter.string(from: today)
-        
-    }
+
 }
 
-extension ViewControllerSearchedCity{
-    
-    private func showCellAnimation(cell:SearchedCityTableViewCell){
-        
-        UIView.animate(withDuration: 2 ,delay:0 ,options:[.repeat,.autoreverse],animations: {
-            cell.maxTempUnderline.alpha = 0
-            cell.minTempUnderline.alpha = 0
-            cell.weatherConditionImageView.transform = CGAffineTransform(translationX: 4, y: 0)
-            
-            cell.weatherConditionImageView.alpha = 1
-            cell.maxTempUnderline.alpha = 1
-            cell.minTempUnderline.alpha = 1
-            
-        }, completion: nil)
-        
-    }
-    
-    private func setWeatherCell(cell:SearchedCityTableViewCell,indexPath:IndexPath){
-        
-        var day:String{
-            return showTodayNameFromUnixDate(indexPath: indexPath)
-        }
-        
-        cell.dayLabel.text = day
-        
-        self.searchedCityCondition[indexPath.row].weather[0].getIcon(iconCode: self.searchedCityCondition[indexPath.row].weather[0].icon){
-             
-             data in
-            DispatchQueue.main.async {
-                cell.weatherConditionImageView.image = UIImage(data: data!)
-            }
-            
-         }
-
-        cell.minTemperature.text = String(format: "%.1f",searchedCityCondition[indexPath.row].temp.min)
-        cell.maxTemperature.text = String(format: "%.1f",searchedCityCondition[indexPath.row].temp.max)
-    }
-}
 extension ViewControllerSearchedCity:UITableViewDelegate,UITableViewDataSource{
     
     func numberOfSections(in tableView: UITableView) -> Int {
@@ -176,8 +91,8 @@ extension ViewControllerSearchedCity:UITableViewDelegate,UITableViewDataSource{
         
         let weatherCell = weatherTableView.dequeueReusableCell(withIdentifier: "searchedCityCell",for:indexPath) as! SearchedCityTableViewCell
 
-        setWeatherCell(cell: weatherCell, indexPath: indexPath)
-        showCellAnimation(cell: weatherCell)
+        UITableViewCellFeatures().setWeatherCell(weatherConditions: searchedCityCondition, cell: weatherCell, indexPath: indexPath)
+        UITableViewCellFeatures().showCellAnimation(cell: weatherCell)
         return weatherCell
     }
     
@@ -186,17 +101,6 @@ extension ViewControllerSearchedCity:UITableViewDelegate,UITableViewDataSource{
         cell.backgroundColor = UIColor.clear
     }
 
-    func tableView(_ tableView: UITableView, willDisplayHeaderView view: UIView, forSection section: Int) {
-       // Header arka plan rengini şeffaf yap
-       view.backgroundColor = UIColor.clear
-    }
-
-    func tableView(_ tableView: UITableView, willDisplayFooterView view: UIView, forSection section: Int) {
-       // Footer arka plan rengini şeffaf yap
-       view.backgroundColor = UIColor.clear
-    }
-    
-    
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         
         let rowHeight:CGFloat = tableView.frame.size.height/7

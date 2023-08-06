@@ -126,15 +126,7 @@ extension ViewControllerSearch:UITableViewDelegate,UITableViewDataSource{
         cell.backgroundColor = UIColor.clear
     }
 
-    func tableView(_ tableView: UITableView, willDisplayHeaderView view: UIView, forSection section: Int) {
-       // Header arka plan rengini şeffaf yap
-       view.backgroundColor = UIColor.clear
-    }
-
-    func tableView(_ tableView: UITableView, willDisplayFooterView view: UIView, forSection section: Int) {
-       // Footer arka plan rengini şeffaf yap
-       view.backgroundColor = UIColor.clear
-    }
+   
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         
         let rowHeight:CGFloat = tableView.frame.size.height/7.5
