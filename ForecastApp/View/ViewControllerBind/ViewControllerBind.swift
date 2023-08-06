@@ -12,18 +12,16 @@ class ViewControllerBind: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        if Connection.isInternetAvailable(){
+        if Connection.isInternetAvailable(){//internet var ise
             
-            performSegue(withIdentifier: "toMainVC", sender: nil)
+            performSegue(withIdentifier: "toMainVC", sender: nil)// giriş sayfasına geç
             
-        }else{
+        }else{// yoksa hata mesajı göster ve ekrenı kilitle
             
             let alertController = UIAlertController(title: "Hata", message: "Lütfen internet bağlantınızı kontrol ediniz!", preferredStyle: .alert)
             present(alertController, animated: true)
         }
     }
-    
 
-    
     
 }

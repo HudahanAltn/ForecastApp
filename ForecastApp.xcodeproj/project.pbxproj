@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0528C03F2A7FA5000048837D /* Check.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0528C03E2A7FA5000048837D /* Check.swift */; };
 		05379F922A7E46C7000AC901 /* ViewControllerMap.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05379F912A7E46C7000AC901 /* ViewControllerMap.swift */; };
 		055571792A7B854F00A014B8 /* ColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 055571782A7B854F00A014B8 /* ColorExtension.swift */; };
 		0555717B2A7B8BB500A014B8 /* ViewControllerSearchedCity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0555717A2A7B8BB500A014B8 /* ViewControllerSearchedCity.swift */; };
@@ -53,6 +54,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0528C03E2A7FA5000048837D /* Check.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Check.swift; sourceTree = "<group>"; };
 		05379F912A7E46C7000AC901 /* ViewControllerMap.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerMap.swift; sourceTree = "<group>"; };
 		055571782A7B854F00A014B8 /* ColorExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorExtension.swift; sourceTree = "<group>"; };
 		0555717A2A7B8BB500A014B8 /* ViewControllerSearchedCity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerSearchedCity.swift; sourceTree = "<group>"; };
@@ -215,6 +217,7 @@
 				05C9A1972A7AE7D10008B1BA /* Observable.swift */,
 				055571782A7B854F00A014B8 /* ColorExtension.swift */,
 				057DDA922A7EFBF8009A7D63 /* Connection.swift */,
+				0528C03E2A7FA5000048837D /* Check.swift */,
 			);
 			path = Utility;
 			sourceTree = "<group>";
@@ -403,6 +406,7 @@
 				05C9A19C2A7AF09C0008B1BA /* CityTableViewCell.swift in Sources */,
 				055571792A7B854F00A014B8 /* ColorExtension.swift in Sources */,
 				05379F922A7E46C7000AC901 /* ViewControllerMap.swift in Sources */,
+				0528C03F2A7FA5000048837D /* Check.swift in Sources */,
 				05C9A1572A7ADAAB0008B1BA /* ViewController.swift in Sources */,
 				05C9A1532A7ADAAB0008B1BA /* AppDelegate.swift in Sources */,
 				0555717B2A7B8BB500A014B8 /* ViewControllerSearchedCity.swift in Sources */,

@@ -17,6 +17,8 @@ class CityTableViewCell: UITableViewCell {
     
     
     @IBOutlet weak var temperatureUnderline: UILabel!
+    
+    @IBOutlet weak var celciusLabel: UILabel!
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

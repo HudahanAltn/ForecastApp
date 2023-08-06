@@ -264,7 +264,7 @@
             </objects>
             <point key="canvasLocation" x="1973.2824427480916" y="31.690140845070424"/>
         </scene>
-        <!--Map-->
+        <!--Harita-->
         <scene sceneID="9Ml-zA-mcp">
             <objects>
                 <viewController id="3wl-Jg-XsP" customClass="ViewControllerMap" customModule="ForecastApp" customModuleProvider="target" sceneMemberID="viewController">
@@ -281,7 +281,7 @@
                         <viewLayoutGuide key="safeArea" id="Oi5-by-Bxt"/>
                         <color key="backgroundColor" red="0.36078431372549019" green="0.76078431372549016" blue="0.94901960784313721" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Map" id="SGp-V7-KFn"/>
+                    <navigationItem key="navigationItem" title="Harita" id="SGp-V7-KFn"/>
                     <connections>
                         <outlet property="mapView" destination="afu-ed-Qde" id="xtD-rZ-mEA"/>
                         <segue destination="nth-ru-E4S" kind="show" identifier="mapToSearchedCity" id="0Gs-ZF-qVv"/>
@@ -291,7 +291,7 @@
             </objects>
             <point key="canvasLocation" x="2930.5343511450383" y="510.56338028169017"/>
         </scene>
-        <!--search-->
+        <!--Şehir Ara-->
         <scene sceneID="Qjy-WS-vih">
             <objects>
                 <viewController id="YKJ-b8-wBM" customClass="ViewControllerSearch" customModule="ForecastApp" customModuleProvider="target" sceneMemberID="viewController">
@@ -320,7 +320,7 @@
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="İstanbul" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tbW-2n-Nln">
                                                     <rect key="frame" x="20" y="25" width="150" height="24"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="width" constant="150" id="1qN-4w-R9J"/>
+                                                        <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="150" id="1qN-4w-R9J"/>
                                                     </constraints>
                                                     <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="20"/>
                                                     <nil key="textColor"/>
@@ -372,6 +372,7 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
+                                            <outlet property="celciusLabel" destination="d2v-iq-SRO" id="eZS-mf-0we"/>
                                             <outlet property="cityLabel" destination="tbW-2n-Nln" id="26Y-H5-0P9"/>
                                             <outlet property="temperatureLabel" destination="gca-ce-Jk2" id="56C-KE-WOl"/>
                                             <outlet property="temperatureUnderline" destination="KmZ-Se-IoR" id="eSQ-19-rYU"/>
@@ -393,7 +394,7 @@
                             <constraint firstItem="dsW-5Y-yMe" firstAttribute="trailing" secondItem="hqY-cQ-uKh" secondAttribute="trailing" id="o3g-xG-DbY"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="search" id="45H-mE-8Yd"/>
+                    <navigationItem key="navigationItem" title="Şehir Ara" id="45H-mE-8Yd"/>
                     <connections>
                         <outlet property="citySearchBar" destination="dsW-5Y-yMe" id="uMx-Sd-Cyt"/>
                         <outlet property="cityTableView" destination="lvJ-NU-e9C" id="fcS-of-JHc"/>

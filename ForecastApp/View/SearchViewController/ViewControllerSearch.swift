@@ -77,23 +77,15 @@ extension ViewControllerSearch:UITableViewDelegate,UITableViewDataSource{
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
-        if isSearching{
-            return 1
-            
-        }else{
-            return 0
-        }
+        return 1
         
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        
-        
+       
         
         if isSearching{
-            
             let cell = tableView.dequeueReusableCell(withIdentifier: "cityCell",for:indexPath) as! CityTableViewCell
-          
             let cityString = searchedWeather?.cityname
             if let range = cityString!.range(of: " "){
                 let substring = cityString![..<range.lowerBound]
@@ -103,7 +95,6 @@ extension ViewControllerSearch:UITableViewDelegate,UITableViewDataSource{
                 cell.cityLabel.text = cityString
             }
             
-//            cell.cityLabel.text = searchedWeather?.cityname
             searchedWeather?.getIcon(iconCode: searchedWeather!.conditionName){
 
                 value in
@@ -117,16 +108,16 @@ extension ViewControllerSearch:UITableViewDelegate,UITableViewDataSource{
             
         }else{
             let cell = tableView.dequeueReusableCell(withIdentifier: "cityCell",for:indexPath) as! CityTableViewCell
-            let noWeather:WeatherModel = WeatherModel()
-            cell.cityLabel.text = noWeather.cityname
+            
+            cell.cityLabel.text = "Sonuç Bulunamadı"
             cell.weatherConditionImageView.image = nil
             cell.temperatureLabel.text = ""
-            
-       
+            cell.temperatureUnderline.text = ""
+            cell.celciusLabel.text = ""
+
             return cell
         }
       
-     
     }
     
     
@@ -157,39 +148,49 @@ extension ViewControllerSearch:UITableViewDelegate,UITableViewDataSource{
     }
     
 }
+
 extension ViewControllerSearch:UISearchBarDelegate{
-    
+
+   
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {// her metin değiştiğinde tetiklenir.
-        
+
+       
         if citySearchBar.text == ""{ // searchBar 'a yazdıklarımızı silince
-            
+
             isSearching = false// arama artık yapılmıyordur
-            
+
             cityTableView.alpha = 0
-            
+
             self.cityTableView.reloadData()
-            
+
         }
         else{//arama yapılıyor
-            
-            isSearching = true
-            cityTableView.alpha = 1
-            
-            if let cityName = searchBar.text{
-     
-                viewModelSearch.loadDataWithCityName(cityName: cityName)
-                viewModelSearch.receivedWeather.bind{
-                    
-                    [weak self] value in
-                    
-            
-                    DispatchQueue.main.async {
-                        self!.searchedWeather = value
-                        self!.cityTableView.reloadData()
+
+            if citySearchBar.text!.count > 3 && citySearchBar.text!.count < 20{// kullanıcı geçerli kelime aralığında arama yapmalıdır.
+
+                isSearching = true
+                cityTableView.alpha = 1
+
+                if let cityName = Check.convertToNonTurkishCharacters(searchText){
+
+                    viewModelSearch.loadDataWithCityName(cityName: cityName)
+                    viewModelSearch.receivedWeather.bind{
+
+                        [weak self] value in
+
+
+                        DispatchQueue.main.async {
+                            self!.searchedWeather = value
+                            self!.cityTableView.reloadData()
+                        }
                     }
-                   
                 }
+            }else{
+                
+                print("geçersiz kelime aralığı")
+                isSearching = false
             }
+            
         }
     }
     
