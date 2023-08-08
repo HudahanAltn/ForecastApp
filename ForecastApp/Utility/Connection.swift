@@ -7,6 +7,7 @@
 
 import Foundation
 import SystemConfiguration
+
 struct Connection{
     
     static func isInternetAvailable() -> Bool {
@@ -29,6 +30,7 @@ struct Connection{
         
         let isReachable = flags.contains(.reachable)
         let needsConnection = flags.contains(.connectionRequired)
+        
         return isReachable && !needsConnection
     }
 }

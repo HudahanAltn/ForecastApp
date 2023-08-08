@@ -68,7 +68,7 @@ struct WeatherManager{
     }
     
 
-    private func parseJSON(weatherData:Data)->WeatherModel?{ //parse başarılı olur veya olmaz diye return'lü fonk tanımladık aşağıdaki bloklardan birinde hata gelirse direkt catch çalışacak ve nil return edilecek
+     func parseJSON(weatherData:Data)->WeatherModel?{ //parse başarılı olur veya olmaz diye return'lü fonk tanımladık aşağıdaki bloklardan birinde hata gelirse direkt catch çalışacak ve nil return edilecek
         
         do{
 
@@ -82,7 +82,7 @@ struct WeatherManager{
             let lat = decodedData.coord.lat
             let long = decodedData.coord.lon
             // verilerle yeni bir nesne oluşturduk.bu nesne ile arayüzümüzü şekillendireceğiz
-            let weatherModel = WeatherModel(coditionID: conditionID, cityname: name, temperature: temperature,latitude: lat,longitude: long)
+            let weatherModel = WeatherModel(coditionID: conditionID, cityname: name, temperature: temperature,latitude: lat,longitude: long).copy()
             
             print("şehir:\(weatherModel.cityname)")
             print("şehir lat:\(weatherModel.latitude)")

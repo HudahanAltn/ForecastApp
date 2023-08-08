@@ -7,6 +7,7 @@
 
 import UIKit
 
+
 class ViewControllerSearch: UIViewController {
 
     @IBOutlet weak var citySearchBar: UISearchBar!
@@ -87,6 +88,7 @@ extension ViewControllerSearch:UITableViewDelegate,UITableViewDataSource{
         if isSearching{
             let cell = tableView.dequeueReusableCell(withIdentifier: "cityCell",for:indexPath) as! CityTableViewCell
             let cityString = searchedWeather?.cityname
+            
             if let range = cityString!.range(of: " "){
                 let substring = cityString![..<range.lowerBound]
                 cell.cityLabel.text = String(substring)
@@ -107,6 +109,7 @@ extension ViewControllerSearch:UITableViewDelegate,UITableViewDataSource{
             return cell
             
         }else{
+            
             let cell = tableView.dequeueReusableCell(withIdentifier: "cityCell",for:indexPath) as! CityTableViewCell
             
             cell.cityLabel.text = "Sonuç Bulunamadı"
@@ -158,30 +161,48 @@ extension ViewControllerSearch:UISearchBarDelegate{
         }
         else{//arama yapılıyor
 
-            if searchText.count > 3 && searchText.count < 20 && !searchText.trimmingCharacters(in: .whitespaces).isEmpty{// kullanıcı geçerli kelime aralığında arama yapmalıdır.
+            if Connection.isInternetAvailable(){//internet varsa arama yap
+                
+                
+                if searchText.count > 3 && searchText.count < 20 && !searchText.trimmingCharacters(in: .whitespaces).isEmpty{// kullanıcı geçerli kelime aralığında arama yapmalıdır.
 
-                isSearching = true
-                cityTableView.alpha = 1
+                    
+                    isSearching = true
+                    cityTableView.alpha = 1
 
-                if let cityName = Check.convertToNonTurkishCharacters(searchText){
+                    if let cityName = Check.convertToNonTurkishCharacters(searchText){
+                        
+                        viewModelSearch.loadDataWithCityName(cityName: cityName.replacingOccurrences(of: " ", with: ""))
+                        viewModelSearch.receivedWeather.bind{
 
-                    viewModelSearch.loadDataWithCityName(cityName: cityName)
-                    viewModelSearch.receivedWeather.bind{
-
-                        [weak self] value in
+                            [weak self] value in
 
 
-                        DispatchQueue.main.async {
-                            self!.searchedWeather = value
-                            self!.cityTableView.reloadData()
+                            DispatchQueue.main.async {
+                                self!.searchedWeather = value
+                                self!.cityTableView.reloadData()
+                            }
                         }
                     }
+                }else{
+                    
+                    print("geçersiz kelime aralığı")
+                    isSearching = false
                 }
             }else{
                 
-                print("geçersiz kelime aralığı")
+                
                 isSearching = false
+
+                let alertcontroller = UIAlertController(title: "Hata", message: "İnternet Bağlantısı Yok!", preferredStyle: .alert)
+                
+                let OKButton = UIAlertAction(title: "Tamam", style: .cancel)
+                
+                alertcontroller.addAction(OKButton)
+                
+                present(alertcontroller, animated: true)
             }
+           
             
         }
     }

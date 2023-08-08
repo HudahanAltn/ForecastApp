@@ -8,8 +8,15 @@
 import Foundation
 
 
-class WeatherModel{
+class WeatherModel:Equatable{
+    static func == (lhs: WeatherModel, rhs: WeatherModel) -> Bool {
+        
+        return lhs.cityname == rhs.cityname
+    }
     
+   
+    
+ 
     var conditionID:Int // bu ID ye göre ekranda havadurumuna ait resim çıkacak
     var cityname:String// sehir ismi
     var temperature:Double //sıcaklık
@@ -79,6 +86,10 @@ class WeatherModel{
         self.temperature = 0.0
         self.latitude = 0.0
         self.longitude = 0.0
+    }
+    func copy(with zone: NSZone? = nil) -> WeatherModel {
+        let copy = WeatherModel(coditionID:conditionID,cityname:cityname,temperature:temperature,latitude:latitude,longitude:longitude)
+        return copy
     }
    
     func getIcon(iconCode:String,completion:@escaping(Data?)->Void){// openweather icon çekmek için oluşturulan fonksiyon.iconise "conditionName" değerleri ile çekilecek.

@@ -2,7 +2,7 @@
 //  Check.swift
 //  ForecastApp
 //
-//  Created by Hüdahan Altun on 6.08.2023.
+//  Created by Hüdahan Altun
 //
 
 import Foundation

@@ -51,7 +51,7 @@ struct WeatherManagerSeven{
     }
     
 
-    private func parseJSONSevenDays(weatherData:Data)->WeatherDataSeven?{ //parse başarılı olur veya olmaz diye return'lü fonk tanımladık aşağıdaki bloklardan birinde hata gelirse direkt catch çalışacak ve nil return edilecek
+     func parseJSONSevenDays(weatherData:Data)->WeatherDataSeven?{ //parse başarılı olur veya olmaz diye return'lü fonk tanımladık aşağıdaki bloklardan birinde hata gelirse direkt catch çalışacak ve nil return edilecek
         
         do{
 

@@ -1,18 +1,19 @@
 //
-//  ForecastAppTests.swift
+//  WeatherManagerSevenTest.swift
 //  ForecastAppTests
 //
-//  Created by Hüdahan Altun on 2.08.2023.
+//  Created by Hüdahan Altun on 8.08.2023.
 //
 
 import XCTest
-
-
-final class ForecastAppTests: XCTestCase {
+@testable import ForecastApp
+final class WeatherManagerSevenTest: XCTestCase {
 
     
     override func setUpWithError() throws {
         // Put setup code here. This method is called before the invocation of each test method in the class.
+        
+       
     }
 
     override func tearDownWithError() throws {
